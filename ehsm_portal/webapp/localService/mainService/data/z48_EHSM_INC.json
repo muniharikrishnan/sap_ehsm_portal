@@ -1,0 +1,17 @@
+[
+  {
+    "IncidentKey": "2b8f0d0a-1111-2222-3333-444444444444",
+    "CreatedOn": "/Date(1704067200000)/",
+    "CreatedBy": "ENG001",
+    "ChangedBy": "ENG001",
+    "IncidentCategory": "CAT",
+    "IncidentStatus": "OPEN",
+    "ArchivingStatus": "00",
+    "IncidentId": "INC-1001",
+    "Title": "Slip near conveyor",
+    "PlantId": "P1001",
+    "Location": "Bay 3",
+    "IncidentGroup": "Safety"
+  }
+]
+

@@ -1,0 +1,17 @@
+[
+  {
+    "p_employee_id": "1",
+    "p_password": "2004",
+    "employee_id": "1",
+    "password": "2004",
+    "message": "SUCCESS"
+  },
+  {
+    "p_employee_id": "2",
+    "p_password": "xxxx",
+    "employee_id": "2",
+    "password": "yyyy",
+    "message": "INVALID_PASSWORD"
+  }
+]
+

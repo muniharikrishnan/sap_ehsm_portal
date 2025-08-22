@@ -1,0 +1,14 @@
+[
+  {
+    "NodeId": "4c9f0d0a-aaaa-bbbb-cccc-555555555555",
+    "CreatedOnAt": "/Date(1704153600000)/",
+    "CreatedBy": "ENG002",
+    "ChangedBy": "ENG002",
+    "RiskKeyReference": "R-REF-2001",
+    "AssessmentTeamMember": "John D",
+    "Role": "Lead",
+    "Regulation": "OSHA-1910",
+    "UrlLinkToRegulation": "https://example.com/osha1910"
+  }
+]
+

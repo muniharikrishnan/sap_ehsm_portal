@@ -1,0 +1,25 @@
+<mvc:View controllerName="ehsmportal.controller.Incidents"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:t="sap.ui.table">
+    <Page id="incidentsPage" title="Incident Management" showNavButton="true" navButtonPress="onBack">
+        <content>
+            <t:Table id="tblIncidents" visibleRowCount="15" selectionMode="None" rows="{ path: '/z48_EHSM_INC', parameters: { $format: 'json' } }">
+                <t:columns>
+                    <t:Column width="12rem"><Label text="Incident ID"/><t:template><Text text="{IncidentId}"/></t:template></t:Column>
+                    <t:Column width="24rem"><Label text="Title"/><t:template><Text text="{Title}"/></t:template></t:Column>
+                    <t:Column width="12rem"><Label text="Created On"/><t:template><Text text="{path: 'CreatedOn', type: 'sap.ui.model.type.DateTime', formatOptions: { style: 'medium' }}"/></t:template></t:Column>
+                    <t:Column width="10rem"><Label text="Status"/><t:template><Text text="{IncidentStatus}"/></t:template></t:Column>
+                    <t:Column width="8rem"><Label text="Plant"/><t:template><Text text="{PlantId}"/></t:template></t:Column>
+                    <t:Column width="20rem"><Label text="Location"/><t:template><Text text="{Location}"/></t:template></t:Column>
+                    <t:Column width="8rem"><Label text="Category"/><t:template><Text text="{IncidentCategory}"/></t:template></t:Column>
+                    <t:Column width="16rem"><Label text="Group"/><t:template><Text text="{IncidentGroup}"/></t:template></t:Column>
+                    <t:Column width="12rem"><Label text="Created By"/><t:template><Text text="{CreatedBy}"/></t:template></t:Column>
+                    <t:Column width="12rem"><Label text="Changed By"/><t:template><Text text="{ChangedBy}"/></t:template></t:Column>
+                    <t:Column width="10rem"><Label text="Archiving Status"/><t:template><Text text="{ArchivingStatus}"/></t:template></t:Column>
+                </t:columns>
+            </t:Table>
+        </content>
+    </Page>
+</mvc:View>
+

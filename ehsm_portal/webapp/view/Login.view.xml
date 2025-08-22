@@ -1,0 +1,14 @@
+<mvc:View controllerName="ehsmportal.controller.Login"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="loginPage" title="{i18n>login.title}">
+        <content>
+            <VBox class="sapUiSmallMargin" renderType="Bare">
+                <Input id="empId" width="100%" placeholder="{i18n>login.user}" valueLiveUpdate="true"/>
+                <Input id="password" width="100%" type="Password" placeholder="{i18n>login.password}" valueLiveUpdate="true"/>
+                <Button id="loginBtn" text="{i18n>login.submit}" type="Emphasized" press="onLogin"/>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
+

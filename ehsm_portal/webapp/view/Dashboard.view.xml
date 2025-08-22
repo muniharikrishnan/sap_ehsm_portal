@@ -1,0 +1,16 @@
+<mvc:View controllerName="ehsmportal.controller.Dashboard"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="dashboardPage" title="Safety Engineer Dashboard">
+        <headerContent>
+            <Button id="logoutBtn" text="Logout" type="Transparent" press="onLogout"/>
+        </headerContent>
+        <content>
+            <TileContainer>
+                <StandardTile title="{i18n>tile.incidents}" icon="sap-icon://incident" press="onNavIncidents"/>
+                <StandardTile title="{i18n>tile.risks}" icon="sap-icon://risk" press="onNavRisks"/>
+            </TileContainer>
+        </content>
+    </Page>
+</mvc:View>
+
