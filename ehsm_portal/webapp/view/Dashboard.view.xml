@@ -1,15 +1,117 @@
 <mvc:View controllerName="ehsmportal.controller.Dashboard"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
-    <Page id="dashboardPage" title="Safety Engineer Dashboard">
-        <headerContent>
-            <Button id="logoutBtn" text="Logout" type="Transparent" press="onLogout"/>
-        </headerContent>
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Page id="dashboardPage" title="" showHeader="false" class="sapEHSMDashboardPage">
         <content>
-            <TileContainer>
-                <StandardTile title="{i18n>tile.incidents}" icon="sap-icon://incident" press="onNavIncidents"/>
-                <StandardTile title="{i18n>tile.risks}" icon="sap-icon://risk" press="onNavRisks"/>
-            </TileContainer>
+            <!-- Header Section -->
+            <VBox class="sapEHSMDashboardHeader">
+                <HBox class="sapEHSMDashboardTitleBar" justifyContent="SpaceBetween" alignItems="Center">
+                    <VBox class="sapEHSMDashboardTitleSection">
+                        <core:Icon src="sap-icon://shield" class="sapEHSMDashboardLogo" size="2.5rem"/>
+                        <Text text="Safety Engineer Dashboard" class="sapEHSMDashboardTitle"/>
+                        <Text text="Environmental Health &amp; Safety Management Portal" class="sapEHSMDashboardSubtitle"/>
+                    </VBox>
+                    <Button id="logoutBtn" 
+                            text="Logout" 
+                            type="Transparent" 
+                            press="onLogout"
+                            class="sapEHSMLogoutButton"/>
+                </HBox>
+            </VBox>
+
+            <!-- Main Dashboard Content -->
+            <VBox class="sapEHSMDashboardContent">
+                <!-- Welcome Section -->
+                <VBox class="sapEHSMWelcomeSection">
+                    <Text text="Welcome back, Safety Engineer!" class="sapEHSMWelcomeText"/>
+                    <Text text="Monitor and manage your EHS operations efficiently" class="sapEHSMWelcomeSubtext"/>
+                </VBox>
+
+                <!-- Dashboard Cards Grid -->
+                <VBox class="sapEHSMDashboardGrid">
+                    <!-- Incident Management Card -->
+                    <VBox class="sapEHSMDashboardCard sapEHSMIncidentCard">
+                        <VBox class="sapEHSMCardHeader">
+                            <core:Icon src="sap-icon://incident" class="sapEHSMCardIcon"/>
+                            <Text text="Incident Management" class="sapEHSMCardTitle"/>
+                        </VBox>
+                        <VBox class="sapEHSMCardContent">
+                            <Text text="Track, investigate, and resolve safety incidents" class="sapEHSMCardDescription"/>
+                            <HBox class="sapEHSMCardStats">
+                                <VBox class="sapEHSMStatItem">
+                                    <Text text="12" class="sapEHSMStatNumber"/>
+                                    <Text text="Active Cases" class="sapEHSMStatLabel"/>
+                                </VBox>
+                                <VBox class="sapEHSMStatItem">
+                                    <Text text="3" class="sapEHSMStatNumber"/>
+                                    <Text text="Pending Review" class="sapEHSMStatLabel"/>
+                                </VBox>
+                            </HBox>
+                        </VBox>
+                        <VBox class="sapEHSMCardFooter">
+                            <Button text="Click to manage incidents" 
+                                    class="sapEHSMCardActionBtn"
+                                    press="onNavIncidents"/>
+                            <core:Icon src="sap-icon://arrow-right" class="sapEHSMCardArrow"/>
+                        </VBox>
+                    </VBox>
+
+                    <!-- Risk Assessment Card -->
+                    <VBox class="sapEHSMDashboardCard sapEHSMRiskCard">
+                        <VBox class="sapEHSMCardHeader">
+                            <core:Icon src="sap-icon://risk" class="sapEHSMCardIcon"/>
+                            <Text text="Risk Assessment" class="sapEHSMCardTitle"/>
+                        </VBox>
+                        <VBox class="sapEHSMCardContent">
+                            <Text text="Identify, analyze, and mitigate workplace risks" class="sapEHSMCardDescription"/>
+                            <HBox class="sapEHSMCardStats">
+                                <VBox class="sapEHSMStatItem">
+                                    <Text text="8" class="sapEHSMStatNumber"/>
+                                    <Text text="High Risks" class="sapEHSMStatLabel"/>
+                                </VBox>
+                                <VBox class="sapEHSMStatItem">
+                                    <Text text="15" class="sapEHSMStatNumber"/>
+                                    <Text text="Medium Risks" class="sapEHSMStatLabel"/>
+                                </VBox>
+                            </HBox>
+                        </VBox>
+                        <VBox class="sapEHSMCardFooter">
+                            <Button text="Click to assess risks" 
+                                    class="sapEHSMCardActionBtn"
+                                    press="onNavRisks"/>
+                            <core:Icon src="sap-icon://arrow-right" class="sapEHSMCardArrow"/>
+                        </VBox>
+                    </VBox>
+                </VBox>
+
+                <!-- Quick Actions Section -->
+                <VBox class="sapEHSMQuickActions">
+                    <Text text="Quick Actions" class="sapEHSMQuickActionsTitle"/>
+                    <HBox class="sapEHSMQuickActionsGrid">
+                        <Button text="New Incident" 
+                                icon="sap-icon://add" 
+                                class="sapEHSMQuickActionBtn"
+                                press="onNewIncident"/>
+                        <Button text="Risk Report" 
+                                icon="sap-icon://document" 
+                                class="sapEHSMQuickActionBtn"
+                                press="onRiskReport"/>
+                        <Button text="Safety Audit" 
+                                icon="sap-icon://checklist" 
+                                class="sapEHSMQuickActionBtn"
+                                press="onSafetyAudit"/>
+                    </HBox>
+                </VBox>
+
+                <!-- Footer Section -->
+                <VBox class="sapEHSMDashboardFooter">
+                    <HBox class="sapEHSMFooterContent">
+                        <core:Icon src="sap-icon://shield" class="sapEHSMFooterIcon"/>
+                        <Text text="Secure Enterprise EHSM Portal - Powered by SAP" class="sapEHSMFooterText"/>
+                    </HBox>
+                </VBox>
+            </VBox>
         </content>
     </Page>
 </mvc:View>
