@@ -1,24 +1,84 @@
 <mvc:View controllerName="ehsmportal.controller.Incidents"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
-    xmlns:t="sap.ui.table">
-    <Page id="incidentsPage" title="Incident Management" showNavButton="true" navButtonPress="onBack">
+    xmlns:t="sap.ui.table"
+    xmlns:core="sap.ui.core">
+    <Page id="incidentsPage" title="Incident Management" showNavButton="true" navButtonPress="onBack" class="sapEHSMIncidentsPage">
         <content>
-            <t:Table id="tblIncidents" visibleRowCount="15" selectionMode="None" rows="{ path: '/z48_EHSM_INC', parameters: { $format: 'json' } }">
-                <t:columns>
-                    <t:Column width="12rem"><Label text="Incident ID"/><t:template><Text text="{IncidentId}"/></t:template></t:Column>
-                    <t:Column width="24rem"><Label text="Title"/><t:template><Text text="{Title}"/></t:template></t:Column>
-                    <t:Column width="12rem"><Label text="Created On"/><t:template><Text text="{path: 'CreatedOn', type: 'sap.ui.model.type.DateTime', formatOptions: { style: 'medium' }}"/></t:template></t:Column>
-                    <t:Column width="10rem"><Label text="Status"/><t:template><Text text="{IncidentStatus}"/></t:template></t:Column>
-                    <t:Column width="8rem"><Label text="Plant"/><t:template><Text text="{PlantId}"/></t:template></t:Column>
-                    <t:Column width="20rem"><Label text="Location"/><t:template><Text text="{Location}"/></t:template></t:Column>
-                    <t:Column width="8rem"><Label text="Category"/><t:template><Text text="{IncidentCategory}"/></t:template></t:Column>
-                    <t:Column width="16rem"><Label text="Group"/><t:template><Text text="{IncidentGroup}"/></t:template></t:Column>
-                    <t:Column width="12rem"><Label text="Created By"/><t:template><Text text="{CreatedBy}"/></t:template></t:Column>
-                    <t:Column width="12rem"><Label text="Changed By"/><t:template><Text text="{ChangedBy}"/></t:template></t:Column>
-                    <t:Column width="10rem"><Label text="Archiving Status"/><t:template><Text text="{ArchivingStatus}"/></t:template></t:Column>
-                </t:columns>
-            </t:Table>
+            <!-- Search Filter Section -->
+            <VBox class="sapEHSMIncidentsSearchSection">
+                <HBox class="sapEHSMIncidentsSearchBar" alignItems="Center" justifyContent="SpaceBetween">
+                    <VBox class="sapEHSMIncidentsSearchTitleSection">
+                        <Text text="Search Incidents" class="sapEHSMIncidentsSearchTitle"/>
+                        <Text text="Filter incidents by Incident ID" class="sapEHSMIncidentsSearchSubtitle"/>
+                    </VBox>
+                    <HBox class="sapEHSMIncidentsSearchInputSection" alignItems="Center" gap="1rem">
+                        <SearchField id="incidentSearchField" 
+                                   placeholder="Enter Incident ID..." 
+                                   search="onSearchIncident"
+                                   class="sapEHSMIncidentsSearchField"/>
+                        <Button text="Clear" 
+                                press="onClearSearch" 
+                                class="sapEHSMIncidentsClearButton"/>
+                    </HBox>
+                </HBox>
+            </VBox>
+
+            <!-- Incidents Table -->
+            <VBox class="sapEHSMIncidentsTableSection">
+                <t:Table id="tblIncidents" 
+                         visibleRowCount="15" 
+                         selectionMode="None" 
+                         rows="{ path: '/z48_EHSM_INC', parameters: { $format: 'json' } }"
+                         class="sapEHSMIncidentsTable">
+                    <t:columns>
+                        <t:Column width="12rem" class="sapEHSMIncidentsTableColumn">
+                            <Label text="Incident ID" class="sapEHSMIncidentsTableHeader"/>
+                            <t:template><Text text="{IncidentId}" class="sapEHSMIncidentsTableCell"/></t:template>
+                        </t:Column>
+                        <t:Column width="24rem" class="sapEHSMIncidentsTableColumn">
+                            <Label text="Title" class="sapEHSMIncidentsTableHeader"/>
+                            <t:template><Text text="{Title}" class="sapEHSMIncidentsTableCell"/></t:template>
+                        </t:Column>
+                        <t:Column width="12rem" class="sapEHSMIncidentsTableColumn">
+                            <Label text="Created On" class="sapEHSMIncidentsTableHeader"/>
+                            <t:template><Text text="{path: 'CreatedOn', type: 'sap.ui.model.type.DateTime', formatOptions: { style: 'medium' }}" class="sapEHSMIncidentsTableCell"/></t:template>
+                        </t:Column>
+                        <t:Column width="10rem" class="sapEHSMIncidentsTableColumn">
+                            <Label text="Status" class="sapEHSMIncidentsTableHeader"/>
+                            <t:template><Text text="{IncidentStatus}" class="sapEHSMIncidentsTableCell"/></t:template>
+                        </t:Column>
+                        <t:Column width="8rem" class="sapEHSMIncidentsTableColumn">
+                            <Label text="Plant" class="sapEHSMIncidentsTableHeader"/>
+                            <t:template><Text text="{PlantId}" class="sapEHSMIncidentsTableCell"/></t:template>
+                        </t:Column>
+                        <t:Column width="20rem" class="sapEHSMIncidentsTableColumn">
+                            <Label text="Location" class="sapEHSMIncidentsTableHeader"/>
+                            <t:template><Text text="{Location}" class="sapEHSMIncidentsTableCell"/></t:template>
+                        </t:Column>
+                        <t:Column width="8rem" class="sapEHSMIncidentsTableColumn">
+                            <Label text="Category" class="sapEHSMIncidentsTableHeader"/>
+                            <t:template><Text text="{IncidentCategory}" class="sapEHSMIncidentsTableCell"/></t:template>
+                        </t:Column>
+                        <t:Column width="16rem" class="sapEHSMIncidentsTableColumn">
+                            <Label text="Group" class="sapEHSMIncidentsTableHeader"/>
+                            <t:template><Text text="{IncidentGroup}" class="sapEHSMIncidentsTableCell"/></t:template>
+                        </t:Column>
+                        <t:Column width="12rem" class="sapEHSMIncidentsTableColumn">
+                            <Label text="Created By" class="sapEHSMIncidentsTableHeader"/>
+                            <t:template><Text text="{CreatedBy}" class="sapEHSMIncidentsTableCell"/></t:template>
+                        </t:Column>
+                        <t:Column width="12rem" class="sapEHSMIncidentsTableColumn">
+                            <Label text="Changed By" class="sapEHSMIncidentsTableHeader"/>
+                            <t:template><Text text="{ChangedBy}" class="sapEHSMIncidentsTableCell"/></t:template>
+                        </t:Column>
+                        <t:Column width="10rem" class="sapEHSMIncidentsTableColumn">
+                            <Label text="Archiving Status" class="sapEHSMIncidentsTableHeader"/>
+                            <t:template><Text text="{ArchivingStatus}" class="sapEHSMIncidentsTableCell"/></t:template>
+                        </t:Column>
+                    </t:columns>
+                </t:Table>
+            </VBox>
         </content>
     </Page>
 </mvc:View>

@@ -882,3 +882,1119 @@
     background: transparent !important;
     border: none !important;
 }
+
+/* ======================================== */
+/* INCIDENTS PAGE STYLES - SAP EHSM THEME */
+/* ======================================== */
+
+/* Incidents Page Styles */
+.sapEHSMIncidentsPage {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f1f3f4 100%) !important;
+    min-height: 100vh !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+.sapEHSMIncidentsPage .sapMPage {
+    background: transparent !important;
+}
+
+.sapEHSMIncidentsPage .sapMPageContent {
+    background: transparent !important;
+}
+
+/* Override SAPUI5 Page Header - Remove Blue Colors */
+.sapEHSMIncidentsPage .sapMPageHeader {
+    background: var(--sap-ehsm-secondary) !important;
+    border-bottom: 3px solid var(--sap-ehsm-primary) !important;
+}
+
+.sapEHSMIncidentsPage .sapMPageHeader .sapMBarTitle {
+    color: var(--sap-ehsm-primary) !important;
+    font-weight: 700 !important;
+    font-size: 1.5rem !important;
+}
+
+.sapEHSMIncidentsPage .sapMPageHeader .sapMBtn {
+    color: var(--sap-ehsm-primary) !important;
+}
+
+.sapEHSMIncidentsPage .sapMPageHeader .sapMBtn .sapMBtnInner {
+    color: var(--sap-ehsm-primary) !important;
+    background: transparent !important;
+    border: 2px solid var(--sap-ehsm-primary) !important;
+    border-radius: 8px !important;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.3s ease !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.sapEHSMIncidentsPage .sapMPageHeader .sapMBtn:hover .sapMBtnInner {
+    background: var(--sap-ehsm-primary) !important;
+    color: var(--sap-ehsm-secondary) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px var(--sap-ehsm-shadow) !important;
+}
+
+/* Back Button Text Centering */
+.sapEHSMIncidentsPage .sapMPageHeader .sapMBtn .sapMBtnText {
+    color: inherit !important;
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Override any SAPUI5 button content positioning */
+.sapEHSMIncidentsPage .sapMPageHeader .sapMBtn .sapMBtnContent {
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Search Section */
+.sapEHSMIncidentsSearchSection {
+    background: var(--sap-ehsm-secondary) !important;
+    margin: 1rem 2rem !important;
+    padding: 1.5rem 2rem !important;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 24px var(--sap-ehsm-shadow) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.sapEHSMIncidentsSearchSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--sap-ehsm-gradient);
+    border-radius: 16px 16px 0 0;
+}
+
+.sapEHSMIncidentsSearchBar {
+    width: 100% !important;
+    gap: 2rem !important;
+}
+
+.sapEHSMIncidentsSearchTitleSection {
+    flex-shrink: 0 !important;
+}
+
+.sapEHSMIncidentsSearchTitle {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    color: var(--sap-ehsm-primary) !important;
+    margin-bottom: 0.5rem !important;
+    text-shadow: 0 2px 4px var(--sap-ehsm-shadow) !important;
+}
+
+.sapEHSMIncidentsSearchSubtitle {
+    font-size: 1rem !important;
+    color: var(--sap-ehsm-text-secondary) !important;
+    opacity: 0.8 !important;
+}
+
+.sapEHSMIncidentsSearchInputSection {
+    flex: 1 !important;
+    justify-content: flex-end !important;
+}
+
+/* Search Field Styling */
+.sapEHSMIncidentsSearchField {
+    min-width: 300px !important;
+}
+
+.sapEHSMIncidentsSearchField .sapMSF {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 2px solid var(--sap-ehsm-border) !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease !important;
+}
+
+.sapEHSMIncidentsSearchField .sapMSF:focus-within {
+    border-color: var(--sap-ehsm-primary) !important;
+    box-shadow: 0 0 0 4px rgba(211, 47, 47, 0.1) !important;
+    transform: translateY(-1px) !important;
+}
+
+.sapEHSMIncidentsSearchField .sapMSF input {
+    color: var(--sap-ehsm-text-primary) !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    padding: 0.75rem 1rem !important;
+}
+
+.sapEHSMIncidentsSearchField .sapMSF input::placeholder {
+    color: var(--sap-ehsm-text-secondary) !important;
+    opacity: 0.7 !important;
+}
+
+/* Clear Button */
+.sapEHSMIncidentsClearButton {
+    background: var(--sap-ehsm-secondary) !important;
+    border: 2px solid var(--sap-ehsm-primary) !important;
+    border-radius: 8px !important;
+    color: var(--sap-ehsm-primary) !important;
+    font-weight: 600 !important;
+    padding: 0.75rem 1.5rem !important;
+    transition: all 0.3s ease !important;
+    min-width: 100px !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.sapEHSMIncidentsClearButton:hover {
+    background: var(--sap-ehsm-primary) !important;
+    color: var(--sap-ehsm-secondary) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px var(--sap-ehsm-shadow) !important;
+}
+
+.sapEHSMIncidentsClearButton .sapMBtnInner {
+    background: transparent !important;
+    border: none !important;
+    color: inherit !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    position: relative !important;
+}
+
+.sapEHSMIncidentsClearButton .sapMBtnText {
+    color: inherit !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Table Section */
+.sapEHSMIncidentsTableSection {
+    margin: 1rem 2rem 2rem 2rem !important;
+    background: var(--sap-ehsm-secondary) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 24px var(--sap-ehsm-shadow) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+.sapEHSMIncidentsTableSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--sap-ehsm-gradient);
+    border-radius: 16px 16px 0 0;
+}
+
+/* Table Styling */
+.sapEHSMIncidentsTable {
+    background: transparent !important;
+}
+
+.sapEHSMIncidentsTable .sapUiTable {
+    background: transparent !important;
+}
+
+/* Table Headers - Remove Blue Colors */
+.sapEHSMIncidentsTable .sapUiTableColHdr {
+    background: var(--sap-ehsm-secondary) !important;
+    border-bottom: 2px solid var(--sap-ehsm-primary) !important;
+}
+
+.sapEHSMIncidentsTableHeader {
+    color: var(--sap-ehsm-primary) !important;
+    font-weight: 700 !important;
+    font-size: 0.9rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+.sapEHSMIncidentsTable .sapUiTableColHdrCell {
+    background: var(--sap-ehsm-secondary) !important;
+    border-right: 1px solid var(--sap-ehsm-border) !important;
+    padding: 1rem 0.5rem !important;
+}
+
+.sapEHSMIncidentsTable .sapUiTableColHdrCell:last-child {
+    border-right: none !important;
+}
+
+/* Table Rows */
+.sapEHSMIncidentsTable .sapUiTableRowHdr {
+    background: var(--sap-ehsm-secondary) !important;
+}
+
+.sapEHSMIncidentsTable .sapUiTableRow {
+    background: var(--sap-ehsm-secondary) !important;
+    border-bottom: 1px solid var(--sap-ehsm-border) !important;
+    transition: all 0.3s ease !important;
+}
+
+.sapEHSMIncidentsTable .sapUiTableRow:hover {
+    background: rgba(211, 47, 47, 0.05) !important;
+    transform: translateX(4px) !important;
+}
+
+.sapEHSMIncidentsTable .sapUiTableRow:nth-child(even) {
+    background: rgba(248, 249, 250, 0.8) !important;
+}
+
+.sapEHSMIncidentsTable .sapUiTableRow:nth-child(even):hover {
+    background: rgba(211, 47, 47, 0.08) !important;
+}
+
+/* Table Cells */
+.sapEHSMIncidentsTableCell {
+    color: var(--sap-ehsm-text-primary) !important;
+    font-weight: 500 !important;
+    font-size: 0.9rem !important;
+}
+
+.sapEHSMIncidentsTable .sapUiTableDataCell {
+    background: transparent !important;
+    border-right: 1px solid var(--sap-ehsm-border) !important;
+    padding: 0.75rem 0.5rem !important;
+}
+
+.sapEHSMIncidentsTable .sapUiTableDataCell:last-child {
+    border-right: none !important;
+}
+
+/* Table Scrollbar Styling */
+.sapEHSMIncidentsTable .sapUiTableScrollArea {
+    background: transparent !important;
+}
+
+.sapEHSMIncidentsTable .sapUiTableScrollArea::-webkit-scrollbar {
+    width: 8px !important;
+    height: 8px !important;
+}
+
+.sapEHSMIncidentsTable .sapUiTableScrollArea::-webkit-scrollbar-track {
+    background: rgba(211, 47, 47, 0.1) !important;
+    border-radius: 4px !important;
+}
+
+.sapEHSMIncidentsTable .sapUiTableScrollArea::-webkit-scrollbar-thumb {
+    background: var(--sap-ehsm-primary) !important;
+    border-radius: 4px !important;
+}
+
+.sapEHSMIncidentsTable .sapUiTableScrollArea::-webkit-scrollbar-thumb:hover {
+    background: var(--sap-ehsm-primary-dark) !important;
+}
+
+/* Responsive Design for Incidents Page */
+@media (max-width: 768px) {
+    .sapEHSMIncidentsSearchSection {
+        margin: 1rem !important;
+        padding: 1rem !important;
+    }
+    
+    .sapEHSMIncidentsSearchBar {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        align-items: stretch !important;
+    }
+    
+    .sapEHSMIncidentsSearchInputSection {
+        justify-content: stretch !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+    
+    .sapEHSMIncidentsSearchField {
+        min-width: auto !important;
+        width: 100% !important;
+    }
+    
+    .sapEHSMIncidentsClearButton {
+        width: 100% !important;
+    }
+    
+    .sapEHSMIncidentsTableSection {
+        margin: 1rem !important;
+    }
+    
+    .sapEHSMIncidentsTable .sapUiTableColHdrCell,
+    .sapEHSMIncidentsTable .sapUiTableDataCell {
+        padding: 0.5rem 0.25rem !important;
+    }
+}
+
+/* Override any remaining SAPUI5 blue colors in the table */
+.sapEHSMIncidentsPage .sapUiTable .sapUiTableColHdrCell .sapMLabel {
+    color: var(--sap-ehsm-primary) !important;
+}
+
+.sapEHSMIncidentsPage .sapUiTable .sapUiTableDataCell .sapMText {
+    color: var(--sap-ehsm-text-primary) !important;
+}
+
+.sapEHSMIncidentsPage .sapUiTable .sapUiTableRowHdr {
+    background: var(--sap-ehsm-secondary) !important;
+}
+
+.sapEHSMIncidentsPage .sapUiTable .sapUiTableRowHdr:hover {
+    background: rgba(211, 47, 47, 0.05) !important;
+}
+
+/* Force override any SAPUI5 default blue colors */
+.sapEHSMIncidentsPage * {
+    box-sizing: border-box !important;
+}
+
+.sapEHSMIncidentsPage .sapMBtn.sapMBtnEmphasized {
+    background: var(--sap-ehsm-gradient) !important;
+    border-color: var(--sap-ehsm-primary) !important;
+}
+
+.sapEHSMIncidentsPage .sapMBtn.sapMBtnEmphasized .sapMBtnInner {
+    background: transparent !important;
+    border-color: transparent !important;
+    color: var(--sap-ehsm-secondary) !important;
+}
+
+.sapEHSMIncidentsPage .sapMInput {
+    background: transparent !important;
+    border: none !important;
+}
+
+.sapEHSMIncidentsPage .sapMInput .sapMInputBaseInner {
+    background: transparent !important;
+    border: none !important;
+}
+
+/* Force center the Clear button text - Additional overrides */
+.sapEHSMIncidentsClearButton.sapMBtn {
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.sapEHSMIncidentsClearButton.sapMBtn .sapMBtnInner {
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.sapEHSMIncidentsClearButton.sapMBtn .sapMBtnText {
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Override any SAPUI5 button positioning */
+.sapEHSMIncidentsClearButton.sapMBtn .sapMBtnContent {
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Additional back button centering and blue color removal */
+.sapEHSMIncidentsPage .sapMPageHeader .sapMBtn.sapMBtn {
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.sapEHSMIncidentsPage .sapMPageHeader .sapMBtn.sapMBtn .sapMBtnInner {
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Remove any blue colors from buttons and icons */
+.sapEHSMIncidentsPage .sapMBtn .sapMBtnIcon {
+    color: var(--sap-ehsm-primary) !important;
+}
+
+.sapEHSMIncidentsPage .sapMBtn .sapMBtnIcon.sapMBtnIconLeft {
+    color: var(--sap-ehsm-primary) !important;
+}
+
+.sapEHSMIncidentsPage .sapMBtn .sapMBtnIcon.sapMBtnIconRight {
+    color: var(--sap-ehsm-primary) !important;
+}
+
+/* Force remove any remaining blue colors */
+.sapEHSMIncidentsPage *[style*="blue"] {
+    color: var(--sap-ehsm-primary) !important;
+}
+
+.sapEHSMIncidentsPage *[style*="blue"] {
+    background-color: transparent !important;
+}
+
+.sapEHSMIncidentsPage *[style*="blue"] {
+    border-color: var(--sap-ehsm-primary) !important;
+}
+
+/* ======================================== */
+/* RISKS PAGE STYLES - SAP EHSM THEME */
+/* ======================================== */
+
+/* Risks Page Styles */
+.sapEHSMRisksPage {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f1f3f4 100%) !important;
+    min-height: 100vh !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+.sapEHSMRisksPage .sapMPage {
+    background: transparent !important;
+}
+
+.sapEHSMRisksPage .sapMPageContent {
+    background: transparent !important;
+}
+
+/* Override SAPUI5 Page Header - Remove Blue Colors */
+.sapEHSMRisksPage .sapMPageHeader {
+    background: var(--sap-ehsm-secondary) !important;
+    border-bottom: 3px solid var(--sap-ehsm-primary) !important;
+}
+
+.sapEHSMRisksPage .sapMPageHeader .sapMBarTitle {
+    color: var(--sap-ehsm-primary) !important;
+    font-weight: 700 !important;
+    font-size: 1.5rem !important;
+}
+
+.sapEHSMRisksPage .sapMPageHeader .sapMBtn {
+    color: var(--sap-ehsm-primary) !important;
+}
+
+.sapEHSMRisksPage .sapMPageHeader .sapMBtn .sapMBtnInner {
+    color: var(--sap-ehsm-primary) !important;
+    background: transparent !important;
+    border: 2px solid var(--sap-ehsm-primary) !important;
+    border-radius: 8px !important;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.3s ease !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.sapEHSMRisksPage .sapMPageHeader .sapMBtn:hover .sapMBtnInner {
+    background: var(--sap-ehsm-primary) !important;
+    color: var(--sap-ehsm-secondary) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px var(--sap-ehsm-shadow) !important;
+}
+
+/* Back Button Text Centering */
+.sapEHSMRisksPage .sapMPageHeader .sapMBtn .sapMBtnText {
+    color: inherit !important;
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Override any SAPUI5 button content positioning */
+.sapEHSMRisksPage .sapMPageHeader .sapMBtn .sapMBtnContent {
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Search Section */
+.sapEHSMRisksSearchSection {
+    background: var(--sap-ehsm-secondary) !important;
+    margin: 1rem 2rem !important;
+    padding: 1.5rem 2rem !important;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 24px var(--sap-ehsm-shadow) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.sapEHSMRisksSearchSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--sap-ehsm-gradient);
+    border-radius: 16px 16px 0 0;
+}
+
+.sapEHSMRisksSearchBar {
+    width: 100% !important;
+    gap: 2rem !important;
+}
+
+.sapEHSMRisksSearchTitleSection {
+    flex-shrink: 0 !important;
+}
+
+.sapEHSMRisksSearchTitle {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    color: var(--sap-ehsm-primary) !important;
+    margin-bottom: 0.5rem !important;
+    text-shadow: 0 2px 4px var(--sap-ehsm-shadow) !important;
+}
+
+.sapEHSMRisksSearchSubtitle {
+    font-size: 1rem !important;
+    color: var(--sap-ehsm-text-secondary) !important;
+    opacity: 0.8 !important;
+}
+
+.sapEHSMRisksSearchInputSection {
+    flex: 1 !important;
+    justify-content: flex-end !important;
+}
+
+/* Search Field Styling */
+.sapEHSMRisksSearchField {
+    min-width: 300px !important;
+    position: relative !important;
+}
+
+.sapEHSMRisksSearchField .sapMSF {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 2px solid var(--sap-ehsm-primary) !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+}
+
+/* Double border effect */
+.sapEHSMRisksSearchField .sapMSF::before {
+    content: '' !important;
+    position: absolute !important;
+    top: -2px !important;
+    left: -2px !important;
+    right: -2px !important;
+    bottom: -2px !important;
+    border: 2px solid var(--sap-ehsm-primary) !important;
+    border-radius: 14px !important;
+    z-index: -1 !important;
+    box-shadow: 0 0 8px rgba(211, 47, 47, 0.3) !important;
+}
+
+/* Search Button Styling - Red background with centered icon */
+.sapEHSMRisksSearchField .sapMSFS {
+    background: var(--sap-ehsm-primary) !important;
+    border: none !important;
+    border-radius: 0 12px 12px 0 !important;
+    color: var(--sap-ehsm-secondary) !important;
+    padding: 0.75rem !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 48px !important;
+    height: 100% !important;
+    transition: all 0.3s ease !important;
+}
+
+.sapEHSMRisksSearchField .sapMSFS:hover {
+    background: var(--sap-ehsm-primary-dark) !important;
+    transform: translateY(-1px) !important;
+}
+
+.sapEHSMRisksSearchField .sapMSFS .sapMSFSI {
+    color: var(--sap-ehsm-secondary) !important;
+    font-size: 1.2rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.sapEHSMRisksSearchField .sapMSF:focus-within {
+    border-color: var(--sap-ehsm-primary) !important;
+    box-shadow: 0 0 0 4px rgba(211, 47, 47, 0.1) !important;
+    transform: translateY(-1px) !important;
+}
+
+.sapEHSMRisksSearchField .sapMSF:focus-within::before {
+    border-color: var(--sap-ehsm-primary) !important;
+    box-shadow: 0 0 12px rgba(211, 47, 47, 0.4) !important;
+}
+
+.sapEHSMRisksSearchField .sapMSF input {
+    color: var(--sap-ehsm-text-primary) !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    padding: 0.75rem 1rem !important;
+}
+
+.sapEHSMRisksSearchField .sapMSF input::placeholder {
+    color: var(--sap-ehsm-text-secondary) !important;
+    opacity: 0.7 !important;
+}
+
+/* Clear Button */
+.sapEHSMRisksClearButton {
+    background: var(--sap-ehsm-secondary) !important;
+    border: 2px solid var(--sap-ehsm-primary) !important;
+    border-radius: 8px !important;
+    color: var(--sap-ehsm-primary) !important;
+    font-weight: 600 !important;
+    padding: 0.75rem 1.5rem !important;
+    transition: all 0.3s ease !important;
+    min-width: 100px !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.sapEHSMRisksClearButton:hover {
+    background: var(--sap-ehsm-primary) !important;
+    color: var(--sap-ehsm-secondary) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px var(--sap-ehsm-shadow) !important;
+}
+
+.sapEHSMRisksClearButton .sapMBtnInner {
+    background: transparent !important;
+    border: none !important;
+    color: inherit !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    position: relative !important;
+}
+
+.sapEHSMRisksClearButton .sapMBtnText {
+    color: inherit !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Table Section */
+.sapEHSMRisksTableSection {
+    margin: 1rem 2rem 2rem 2rem !important;
+    background: var(--sap-ehsm-secondary) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 24px var(--sap-ehsm-shadow) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+.sapEHSMRisksTableSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--sap-ehsm-gradient);
+    border-radius: 16px 16px 0 0;
+}
+
+/* Table Styling */
+.sapEHSMRisksTable {
+    background: transparent !important;
+}
+
+.sapEHSMRisksTable .sapUiTable {
+    background: transparent !important;
+}
+
+/* Table Headers - Remove Blue Colors */
+.sapEHSMRisksTable .sapUiTableColHdr {
+    background: var(--sap-ehsm-secondary) !important;
+    border-bottom: 2px solid var(--sap-ehsm-primary) !important;
+}
+
+.sapEHSMRisksTableHeader {
+    color: var(--sap-ehsm-primary) !important;
+    font-weight: 700 !important;
+    font-size: 0.9rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+.sapEHSMRisksTable .sapUiTableColHdrCell {
+    background: var(--sap-ehsm-secondary) !important;
+    border-right: 1px solid var(--sap-ehsm-border) !important;
+    padding: 1rem 0.5rem !important;
+}
+
+.sapEHSMRisksTable .sapUiTableColHdrCell:last-child {
+    border-right: none !important;
+}
+
+/* Table Rows */
+.sapEHSMRisksTable .sapUiTableRowHdr {
+    background: var(--sap-ehsm-secondary) !important;
+}
+
+.sapEHSMRisksTable .sapUiTableRow {
+    background: var(--sap-ehsm-secondary) !important;
+    border-bottom: 1px solid var(--sap-ehsm-border) !important;
+    transition: all 0.3s ease !important;
+}
+
+.sapEHSMRisksTable .sapUiTableRow:hover {
+    background: rgba(211, 47, 47, 0.05) !important;
+    transform: translateX(4px) !important;
+}
+
+.sapEHSMRisksTable .sapUiTableRow:nth-child(even) {
+    background: rgba(248, 249, 250, 0.8) !important;
+}
+
+.sapEHSMRisksTable .sapUiTableRow:nth-child(even):hover {
+    background: rgba(211, 47, 47, 0.08) !important;
+}
+
+/* Table Cells */
+.sapEHSMRisksTableCell {
+    color: var(--sap-ehsm-text-primary) !important;
+    font-weight: 500 !important;
+    font-size: 0.9rem !important;
+}
+
+.sapEHSMRisksTable .sapUiTableDataCell {
+    background: transparent !important;
+    border-right: 1px solid var(--sap-ehsm-border) !important;
+    padding: 0.75rem 0.5rem !important;
+}
+
+.sapEHSMRisksTable .sapUiTableDataCell:last-child {
+    border-right: none !important;
+}
+
+/* Table Scrollbar Styling */
+.sapEHSMRisksTable .sapUiTableScrollArea {
+    background: transparent !important;
+}
+
+.sapEHSMRisksTable .sapUiTableScrollArea::-webkit-scrollbar {
+    width: 8px !important;
+    height: 8px !important;
+}
+
+.sapEHSMRisksTable .sapUiTableScrollArea::-webkit-scrollbar-track {
+    background: rgba(211, 47, 47, 0.1) !important;
+    border-radius: 4px !important;
+}
+
+.sapEHSMRisksTable .sapUiTableScrollArea::-webkit-scrollbar-thumb {
+    background: var(--sap-ehsm-primary) !important;
+    border-radius: 4px !important;
+}
+
+.sapEHSMRisksTable .sapUiTableScrollArea::-webkit-scrollbar-thumb:hover {
+    background: var(--sap-ehsm-primary-dark) !important;
+}
+
+/* Responsive Design for Risks Page */
+@media (max-width: 768px) {
+    .sapEHSMRisksSearchSection {
+        margin: 1rem !important;
+        padding: 1rem !important;
+    }
+    
+    .sapEHSMRisksSearchBar {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        align-items: stretch !important;
+    }
+    
+    .sapEHSMRisksSearchInputSection {
+        justify-content: stretch !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+    
+    .sapEHSMRisksSearchField {
+        min-width: auto !important;
+        width: 100% !important;
+    }
+    
+    .sapEHSMRisksClearButton {
+        width: 100% !important;
+    }
+    
+    .sapEHSMRisksTableSection {
+        margin: 1rem !important;
+    }
+    
+    .sapEHSMRisksTable .sapUiTableColHdrCell,
+    .sapEHSMRisksTable .sapUiTableDataCell {
+        padding: 0.5rem 0.25rem !important;
+    }
+}
+
+/* Override any remaining SAPUI5 blue colors in the table */
+.sapEHSMRisksPage .sapUiTable .sapUiTableColHdrCell .sapMLabel {
+    color: var(--sap-ehsm-primary) !important;
+}
+
+.sapEHSMRisksPage .sapUiTable .sapUiTableDataCell .sapMText {
+    color: var(--sap-ehsm-text-primary) !important;
+}
+
+.sapEHSMRisksPage .sapUiTable .sapUiTableRowHdr {
+    background: var(--sap-ehsm-secondary) !important;
+}
+
+.sapEHSMRisksPage .sapUiTable .sapUiTableRowHdr:hover {
+    background: rgba(211, 47, 47, 0.05) !important;
+}
+
+/* Force override any SAPUI5 default blue colors */
+.sapEHSMRisksPage * {
+    box-sizing: border-box !important;
+}
+
+.sapEHSMRisksPage .sapMBtn.sapMBtnEmphasized {
+    background: var(--sap-ehsm-gradient) !important;
+    border-color: var(--sap-ehsm-primary) !important;
+}
+
+.sapEHSMRisksPage .sapMBtn.sapMBtnEmphasized .sapMBtnInner {
+    background: transparent !important;
+    border-color: transparent !important;
+    color: var(--sap-ehsm-secondary) !important;
+}
+
+.sapEHSMRisksPage .sapMInput {
+    background: transparent !important;
+    border: none !important;
+}
+
+.sapEHSMRisksPage .sapMInput .sapMInputBaseInner {
+    background: transparent !important;
+    border: none !important;
+}
+
+/* Force center the Clear button text - Additional overrides */
+.sapEHSMRisksClearButton.sapMBtn {
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.sapEHSMRisksClearButton.sapMBtn .sapMBtnInner {
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.sapEHSMRisksClearButton.sapMBtn .sapMBtnText {
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Override any SAPUI5 button positioning */
+.sapEHSMRisksClearButton.sapMBtn .sapMBtnContent {
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Additional back button centering and blue color removal */
+.sapEHSMRisksPage .sapMPageHeader .sapMBtn.sapMBtn {
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.sapEHSMRisksPage .sapMPageHeader .sapMBtn.sapMBtn .sapMBtnInner {
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Remove any blue colors from buttons and icons */
+.sapEHSMRisksPage .sapMBtn .sapMBtnIcon {
+    color: var(--sap-ehsm-primary) !important;
+}
+
+.sapEHSMRisksPage .sapMBtn .sapMBtnIcon.sapMBtnIconLeft {
+    color: var(--sap-ehsm-primary) !important;
+}
+
+.sapEHSMRisksPage .sapMBtn .sapMBtnIcon.sapMBtnIconRight {
+    color: var(--sap-ehsm-primary) !important;
+}
+
+/* Force remove any remaining blue colors */
+.sapEHSMRisksPage *[style*="blue"] {
+    color: var(--sap-ehsm-primary) !important;
+}
+
+.sapEHSMRisksPage *[style*="blue"] {
+    background-color: transparent !important;
+}
+
+.sapEHSMRisksPage *[style*="blue"] {
+    border-color: var(--sap-ehsm-primary) !important;
+}
+
+/* Additional overrides to remove blue colors from search fields and buttons */
+.sapEHSMRisksPage .sapMSF {
+    border-color: var(--sap-ehsm-border) !important;
+}
+
+.sapEHSMRisksPage .sapMSF:focus-within {
+    border-color: var(--sap-ehsm-primary) !important;
+}
+
+.sapEHSMRisksPage .sapMSF .sapMSFI {
+    color: var(--sap-ehsm-text-primary) !important;
+}
+
+.sapEHSMRisksPage .sapMSF .sapMSFS {
+    background: var(--sap-ehsm-primary) !important;
+    border-color: var(--sap-ehsm-primary) !important;
+}
+
+.sapEHSMRisksPage .sapMSF .sapMSFS:hover {
+    background: var(--sap-ehsm-primary-dark) !important;
+}
+
+.sapEHSMRisksPage .sapMSF .sapMSFS .sapMSFSI {
+    color: var(--sap-ehsm-secondary) !important;
+}
+
+/* Ensure all table headers are consistently red */
+.sapEHSMRisksPage .sapUiTable .sapUiTableColHdr .sapMLabel {
+    color: var(--sap-ehsm-primary) !important;
+}
+
+.sapEHSMRisksPage .sapUiTable .sapUiTableColHdrCell .sapMLabel {
+    color: var(--sap-ehsm-primary) !important;
+}
+
+/* Let our custom search field styling handle all states */
+
+/* Remove any remaining blue colors from scrollbars */
+.sapEHSMRisksPage ::-webkit-scrollbar-track {
+    background: rgba(211, 47, 47, 0.1) !important;
+}
+
+.sapEHSMRisksPage ::-webkit-scrollbar-thumb {
+    background: var(--sap-ehsm-primary) !important;
+}
+
+.sapEHSMRisksPage ::-webkit-scrollbar-thumb:hover {
+    background: var(--sap-ehsm-primary-dark) !important;
+}
+
+/* Remove conflicting styles - let our custom search field styling take precedence */
+
+/* Let our custom search field styling handle all states */

@@ -1,22 +1,96 @@
 <mvc:View controllerName="ehsmportal.controller.Risks"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
-    xmlns:t="sap.ui.table">
-    <Page id="risksPage" title="Risk Assessment" showNavButton="true" navButtonPress="onBack">
+    xmlns:t="sap.ui.table"
+    xmlns:core="sap.ui.core">
+    <Page id="risksPage" title="Risk Assessment" showNavButton="true" navButtonPress="onBack" class="sapEHSMRisksPage">
         <content>
-            <t:Table id="tblRisks" visibleRowCount="15" selectionMode="None" rows="{ path: '/z48_EHSM_RISK', parameters: { $format: 'json' } }">
-                <t:columns>
-                    <t:Column width="15rem"><Label text="NodeId"/><t:template><Text text="{NodeId}"/></t:template></t:Column>
-                    <t:Column width="12rem"><Label text="Created On"/><t:template><Text text="{path: 'CreatedOnAt', type: 'sap.ui.model.type.DateTime', formatOptions: { style: 'medium' }}"/></t:template></t:Column>
-                    <t:Column width="10rem"><Label text="Created By"/><t:template><Text text="{CreatedBy}"/></t:template></t:Column>
-                    <t:Column width="10rem"><Label text="Changed By"/><t:template><Text text="{ChangedBy}"/></t:template></t:Column>
-                    <t:Column width="16rem"><Label text="Risk Key Ref"/><t:template><Text text="{RiskKeyReference}"/></t:template></t:Column>
-                    <t:Column width="16rem"><Label text="Assessment Team Member"/><t:template><Text text="{AssessmentTeamMember}"/></t:template></t:Column>
-                    <t:Column width="16rem"><Label text="Role"/><t:template><Text text="{Role}"/></t:template></t:Column>
-                    <t:Column width="22rem"><Label text="Regulation"/><t:template><Text text="{Regulation}"/></t:template></t:Column>
-                    <t:Column width="22rem"><Label text="URL/Link to Regulation"/><t:template><Text text="{UrlLinkToRegulation}"/></t:template></t:Column>
-                </t:columns>
-            </t:Table>
+            <!-- Search Filter Section -->
+            <VBox class="sapEHSMRisksSearchSection">
+                <HBox class="sapEHSMRisksSearchBar" alignItems="Center" justifyContent="SpaceBetween">
+                    <VBox class="sapEHSMRisksSearchTitleSection">
+                        <Text text="Search Risks" class="sapEHSMRisksSearchTitle"/>
+                        <Text text="Filter risks by complete Node ID" class="sapEHSMRisksSearchSubtitle"/>
+                    </VBox>
+                    <HBox class="sapEHSMRisksSearchInputSection" alignItems="Center" gap="1rem">
+                        <SearchField id="riskSearchField" 
+                                   class="sapEHSMRisksSearchField"
+                                   placeholder="Enter Node ID..." 
+                                   search="onSearchRisk" 
+                                   width="400px"/>
+                        <Button id="clearRiskSearch" 
+                                text="Clear" 
+                                press="onClearRiskSearch" 
+                                class="sapEHSMRisksClearButton"/>
+                    </HBox>
+                </HBox>
+            </VBox>
+
+            <!-- Table Section -->
+            <VBox class="sapEHSMRisksTableSection">
+                <t:Table id="tblRisks" 
+                         visibleRowCount="15" 
+                         selectionMode="None" 
+                         rows="{ path: '/z48_EHSM_RISK', parameters: { $format: 'json' } }"
+                         class="sapEHSMRisksTable">
+                    <t:columns>
+                        <t:Column width="15rem">
+                            <Label text="NodeId" class="sapEHSMRisksTableHeader"/>
+                            <t:template>
+                                <Text text="{NodeId}" class="sapEHSMRisksTableCell"/>
+                            </t:template>
+                        </t:Column>
+                        <t:Column width="12rem">
+                            <Label text="Created On" class="sapEHSMRisksTableHeader"/>
+                            <t:template>
+                                <Text text="{path: 'CreatedOnAt', type: 'sap.ui.model.type.DateTime', formatOptions: { style: 'medium' }}" class="sapEHSMRisksTableCell"/>
+                            </t:template>
+                        </t:Column>
+                        <t:Column width="10rem">
+                            <Label text="Created By" class="sapEHSMRisksTableHeader"/>
+                            <t:template>
+                                <Text text="{CreatedBy}" class="sapEHSMRisksTableCell"/>
+                            </t:template>
+                        </t:Column>
+                        <t:Column width="10rem">
+                            <Label text="Changed By" class="sapEHSMRisksTableHeader"/>
+                            <t:template>
+                                <Text text="{ChangedBy}" class="sapEHSMRisksTableCell"/>
+                            </t:template>
+                        </t:Column>
+                        <t:Column width="16rem">
+                            <Label text="Risk Key Ref" class="sapEHSMRisksTableHeader"/>
+                            <t:template>
+                                <Text text="{RiskKeyReference}" class="sapEHSMRisksTableCell"/>
+                            </t:template>
+                        </t:Column>
+                        <t:Column width="16rem">
+                            <Label text="Assessment Team Member" class="sapEHSMRisksTableHeader"/>
+                            <t:template>
+                                <Text text="{AssessmentTeamMember}" class="sapEHSMRisksTableCell"/>
+                            </t:template>
+                        </t:Column>
+                        <t:Column width="16rem">
+                            <Label text="Role" class="sapEHSMRisksTableHeader"/>
+                            <t:template>
+                                <Text text="{Role}" class="sapEHSMRisksTableCell"/>
+                            </t:template>
+                        </t:Column>
+                        <t:Column width="22rem">
+                            <Label text="Regulation" class="sapEHSMRisksTableHeader"/>
+                            <t:template>
+                                <Text text="{Regulation}" class="sapEHSMRisksTableCell"/>
+                            </t:template>
+                        </t:Column>
+                        <t:Column width="22rem">
+                            <Label text="URL/Link to Regulation" class="sapEHSMRisksTableHeader"/>
+                            <t:template>
+                                <Text text="{UrlLinkToRegulation}" class="sapEHSMRisksTableCell"/>
+                            </t:template>
+                        </t:Column>
+                    </t:columns>
+                </t:Table>
+            </VBox>
         </content>
     </Page>
 </mvc:View>
