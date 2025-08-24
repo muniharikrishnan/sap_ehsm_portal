@@ -22,11 +22,11 @@
 
             <!-- Main Dashboard Content -->
             <VBox class="sapEHSMDashboardContent">
-                <!-- Welcome Section -->
-                <VBox class="sapEHSMWelcomeSection">
-                    <Text text="Welcome back, Safety Engineer!" class="sapEHSMWelcomeText"/>
-                    <Text text="Monitor and manage your EHS operations efficiently" class="sapEHSMWelcomeSubtext"/>
-                </VBox>
+                                 <!-- Welcome Section -->
+                 <VBox class="sapEHSMWelcomeSection">
+                     <Text text="{dashboard>/welcomeMessage}" class="sapEHSMWelcomeText"/>
+                     <Text text="Monitor and manage your EHS operations efficiently" class="sapEHSMWelcomeSubtext"/>
+                 </VBox>
 
                 <!-- Dashboard Cards Grid -->
                 <VBox class="sapEHSMDashboardGrid">
@@ -40,12 +40,12 @@
                             <Text text="Track, investigate, and resolve safety incidents" class="sapEHSMCardDescription"/>
                             <HBox class="sapEHSMCardStats">
                                 <VBox class="sapEHSMStatItem">
-                                    <Text text="12" class="sapEHSMStatNumber"/>
+                                    <Text text="{dashboard>/incidentStats/activeCases}" class="sapEHSMStatNumber"/>
                                     <Text text="Active Cases" class="sapEHSMStatLabel"/>
                                 </VBox>
                                 <VBox class="sapEHSMStatItem">
-                                    <Text text="3" class="sapEHSMStatNumber"/>
-                                    <Text text="Pending Review" class="sapEHSMStatLabel"/>
+                                    <Text text="{dashboard>/incidentStats/reviewCompleted}" class="sapEHSMStatNumber"/>
+                                    <Text text="Review Completed" class="sapEHSMStatLabel"/>
                                 </VBox>
                             </HBox>
                         </VBox>
@@ -67,11 +67,11 @@
                             <Text text="Identify, analyze, and mitigate workplace risks" class="sapEHSMCardDescription"/>
                             <HBox class="sapEHSMCardStats">
                                 <VBox class="sapEHSMStatItem">
-                                    <Text text="8" class="sapEHSMStatNumber"/>
+                                    <Text text="{dashboard>/riskStats/highRisks}" class="sapEHSMStatNumber"/>
                                     <Text text="High Risks" class="sapEHSMStatLabel"/>
                                 </VBox>
                                 <VBox class="sapEHSMStatItem">
-                                    <Text text="15" class="sapEHSMStatNumber"/>
+                                    <Text text="{dashboard>/riskStats/mediumRisks}" class="sapEHSMStatNumber"/>
                                     <Text text="Medium Risks" class="sapEHSMStatLabel"/>
                                 </VBox>
                             </HBox>

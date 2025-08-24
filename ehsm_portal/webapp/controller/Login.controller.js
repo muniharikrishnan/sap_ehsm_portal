@@ -35,6 +35,14 @@ sap.ui.define([
 						if (oSessionModel) {
 							oSessionModel.setData({ employeeId: oEntry.employee_id });
 						}
+						
+						// Store employee ID in localStorage for dashboard access
+						try {
+							localStorage.setItem("ehsm_employee_id", oEntry.employee_id);
+						} catch (e) {
+							console.warn("Could not store employee ID in localStorage:", e);
+						}
+						
 						that.getOwnerComponent().getRouter().navTo("dashboard");
 					} else {
 						MessageBox.error("Invalid credentials");
