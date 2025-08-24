@@ -4,7 +4,37 @@ sap.ui.define([
 ], function (Controller, MessageBox) {
 	"use strict";
 
-	return Controller.extend("ehsmportal.controller.Login", {
+			return Controller.extend("ehsmportal.controller.Login", {
+		onInit: function() {
+			// Initialize password visibility state
+			this._bPasswordVisible = false;
+		},
+
+		onPasswordToggle: function() {
+			var oPasswordInput = this.byId("password");
+			var oToggleButton = this.byId("passwordToggle");
+			
+			// Toggle the password visibility state
+			this._bPasswordVisible = !this._bPasswordVisible;
+			
+			if (this._bPasswordVisible) {
+				// Show password
+				oPasswordInput.setType("Text");
+				oToggleButton.setIcon("sap-icon://hide");
+				oToggleButton.setTooltip("Hide Password");
+				oToggleButton.setAriaLabel("Hide Password");
+			} else {
+				// Hide password
+				oPasswordInput.setType("Password");
+				oToggleButton.setIcon("sap-icon://show");
+				oToggleButton.setTooltip("Show Password");
+				oToggleButton.setAriaLabel("Show Password");
+			}
+			
+			// Focus back to password input for better UX
+			oPasswordInput.focus();
+		},
+
 		onLogin: function () {
 			var oView = this.getView();
 			var sEmpId = oView.byId("empId").getValue();

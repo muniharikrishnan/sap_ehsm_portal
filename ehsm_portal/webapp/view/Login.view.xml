@@ -35,6 +35,14 @@
                                    placeholder="{i18n>login.password}" 
                                    valueLiveUpdate="true"
                                    class="sapEHSMInput"/>
+                            <Button id="passwordToggle" 
+                                    icon="sap-icon://show" 
+                                    type="Transparent" 
+                                    press="onPasswordToggle"
+                                    class="sapEHSMPasswordToggle"
+                                    tooltip="Show Password"
+                                    ariaLabel="Show Password"
+                                    accessibleRole="Button"/>
                         </HBox>
                     </VBox>
                     

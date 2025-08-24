@@ -159,6 +159,10 @@
     position: relative !important;
     margin-bottom: 1.5rem !important;
     transition: all 0.3s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    min-height: 3.5rem !important;
+    justify-content: flex-start !important;
 }
 
 .sapEHSMInputWrapper:hover {
@@ -174,11 +178,18 @@
     font-size: 1.2rem !important;
     z-index: 2 !important;
     transition: all 0.3s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    pointer-events: none !important;
 }
 
 /* Override SAPUI5 Input Styles */
 .sapEHSMInput {
-    padding-left: 3rem !important;
+    padding-left: 3.5rem !important;
+    padding-right: 3.5rem !important;
     height: 3.5rem !important;
     border: 2px solid var(--sap-ehsm-border) !important;
     border-radius: 12px !important;
@@ -188,6 +199,11 @@
     background: rgba(255, 255, 255, 0.9) !important;
     backdrop-filter: blur(10px) !important;
     color: var(--sap-ehsm-text-primary) !important;
+    flex: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    line-height: 1 !important;
+    box-sizing: border-box !important;
 }
 
 /* Override SAPUI5 Input Focus and Hover */
@@ -220,6 +236,89 @@
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
+    display: flex !important;
+    align-items: center !important;
+    height: 100% !important;
+    line-height: 1 !important;
+    padding: 0 0.5rem 0 0.5rem !important;
+    margin: 0 !important;
+    vertical-align: middle !important;
+    box-sizing: border-box !important;
+}
+
+/* Password Toggle Button Styling */
+.sapEHSMPasswordToggle {
+    position: absolute !important;
+    right: 0.5rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    border: none !important;
+    background: transparent !important;
+    border-radius: 50% !important;
+    transition: all 0.3s ease !important;
+    z-index: 3 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.sapEHSMPasswordToggle:hover {
+    background: rgba(211, 47, 47, 0.1) !important;
+    transform: translateY(-50%) scale(1.1) !important;
+}
+
+.sapEHSMPasswordToggle:active {
+    transform: translateY(-50%) scale(0.95) !important;
+}
+
+.sapEHSMPasswordToggle:focus,
+.sapEHSMPasswordToggle.sapMFocus {
+    outline: 2px solid var(--sap-ehsm-primary) !important;
+    outline-offset: 2px !important;
+    background: rgba(211, 47, 47, 0.1) !important;
+}
+
+.sapEHSMPasswordToggle .sapMBtnInner {
+    background: transparent !important;
+    border: none !important;
+    color: var(--sap-ehsm-primary) !important;
+    font-size: 1.1rem !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.2s ease !important;
+}
+
+.sapEHSMPasswordToggle .sapMBtnInner:hover {
+    background: transparent !important;
+    color: var(--sap-ehsm-primary-dark) !important;
+}
+
+.sapEHSMPasswordToggle .sapMBtnInner:active {
+    background: transparent !important;
+    color: var(--sap-ehsm-primary-dark) !important;
+}
+
+/* Responsive adjustments for password toggle */
+@media (max-width: 768px) {
+    .sapEHSMPasswordToggle {
+        width: 2.2rem !important;
+        height: 2.2rem !important;
+        right: 0.4rem !important;
+    }
+    
+    .sapEHSMPasswordToggle .sapMBtnInner {
+        font-size: 1rem !important;
+    }
+    
+    .sapEHSMInput {
+        padding-right: 3rem !important;
+    }
 }
 
 /* Login Button - Override SAPUI5 Button Styles */
