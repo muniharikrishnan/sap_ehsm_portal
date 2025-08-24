@@ -8,6 +8,83 @@ sap.ui.define([
 	return Controller.extend("ehsmportal.controller.Dashboard", {
 		onInit: function () {
 			this._loadDashboardData();
+			
+			// Listen for login success events
+			var oEventBus = this.getOwnerComponent().getEventBus();
+			if (oEventBus) {
+				oEventBus.attachEvent("loginSuccess", this.onLoginSuccess, this);
+			}
+			
+			// Also listen for route matched events
+			var oRouter = this.getOwnerComponent().getRouter();
+			if (oRouter) {
+				oRouter.attachRouteMatched(this.onRouteMatched, this);
+			}
+			
+			// Start polling for employee ID updates (as a fallback)
+			this._startEmployeeIdPolling();
+		},
+
+		onAfterRendering: function() {
+			// Ensure employee ID is refreshed after rendering
+			console.log("Dashboard: After rendering, refreshing employee ID");
+			// Small delay to ensure localStorage is accessible
+			setTimeout(function() {
+				this.refreshEmployeeId();
+			}.bind(this), 50);
+		},
+
+		onAfterShow: function(oEvent) {
+			// This will be called when the view is shown
+			console.log("Dashboard: View shown, refreshing employee ID");
+			// Refresh the employee ID to ensure it's up-to-date
+			this.refreshEmployeeId();
+		},
+
+		onRouteMatched: function(oEvent) {
+			// This will be called when the route is matched during navigation
+			var sRouteName = oEvent.getParameter("name");
+			
+			// Only refresh if this is the dashboard route
+			if (sRouteName === "dashboard") {
+				console.log("Dashboard: Route matched, refreshing employee ID");
+				// Refresh the employee ID to ensure it's up-to-date
+				this.refreshEmployeeId();
+			}
+		},
+
+		onBeforeShow: function(oEvent) {
+			// This will be called when the view is about to be shown
+			console.log("Dashboard: View about to be shown, refreshing employee ID");
+			// Refresh the employee ID to ensure it's up-to-date
+			this.refreshEmployeeId();
+		},
+
+		onLoginSuccess: function(oEvent) {
+			// This will be called when login is successful
+			var sEmployeeId = oEvent.getParameter("employeeId");
+			if (sEmployeeId) {
+				console.log("Dashboard: Received login success event with employee ID:", sEmployeeId);
+				// Force refresh the employee ID
+				this.refreshEmployeeId();
+			}
+		},
+
+		onExit: function() {
+			// Clean up event listeners
+			var oEventBus = this.getOwnerComponent().getEventBus();
+			if (oEventBus) {
+				oEventBus.detachEvent("loginSuccess", this.onLoginSuccess, this);
+			}
+			
+			// Clean up router event listeners
+			var oRouter = this.getOwnerComponent().getRouter();
+			if (oRouter) {
+				oRouter.detachRouteMatched(this.onRouteMatched, this);
+			}
+			
+			// Stop polling
+			this._stopEmployeeIdPolling();
 		},
 
 		_loadDashboardData: function() {
@@ -17,6 +94,14 @@ sap.ui.define([
 				sEmployeeId = localStorage.getItem("ehsm_employee_id") || "";
 			} catch (e) {
 				console.warn("Could not retrieve employee ID from localStorage:", e);
+			}
+			
+			// If localStorage is empty, try to get from session model as fallback
+			if (!sEmployeeId) {
+				var oSessionModel = this.getOwnerComponent().getModel("session");
+				if (oSessionModel) {
+					sEmployeeId = oSessionModel.getProperty("/employeeId") || "";
+				}
 			}
 			
 			// Create dashboard model
@@ -335,21 +420,90 @@ sap.ui.define([
 		// Method to refresh dashboard data (can be called from other controllers or on demand)
 		refreshDashboardData: function() {
 			this._loadIncidentData();
+			this.refreshEmployeeId();
 		},
 
 		// Method to refresh employee ID display
 		refreshEmployeeId: function() {
 			var sEmployeeId = "";
+			
+			// Try to get from localStorage first
 			try {
 				sEmployeeId = localStorage.getItem("ehsm_employee_id") || "";
+				console.log("Dashboard: Retrieved employee ID from localStorage:", sEmployeeId);
 			} catch (e) {
 				console.warn("Could not retrieve employee ID from localStorage:", e);
+			}
+			
+			// If localStorage is empty, try to get from session model as fallback
+			if (!sEmployeeId) {
+				var oSessionModel = this.getOwnerComponent().getModel("session");
+				if (oSessionModel) {
+					sEmployeeId = oSessionModel.getProperty("/employeeId") || "";
+					console.log("Dashboard: Retrieved employee ID from session model:", sEmployeeId);
+				}
 			}
 			
 			var oDashboardModel = this.getView().getModel("dashboard");
 			if (oDashboardModel) {
 				oDashboardModel.setProperty("/employeeId", sEmployeeId);
 				oDashboardModel.setProperty("/welcomeMessage", sEmployeeId ? "Welcome back, Safety Engineer " + sEmployeeId + "!" : "Welcome back, Safety Engineer!");
+				console.log("Dashboard: Updated model with employee ID:", sEmployeeId);
+			} else {
+				console.warn("Dashboard: No dashboard model found");
+			}
+		},
+
+		// Method to force update employee ID from session model
+		updateEmployeeIdFromSession: function() {
+			var oSessionModel = this.getOwnerComponent().getModel("session");
+			if (oSessionModel) {
+				var sEmployeeId = oSessionModel.getProperty("/employeeId") || "";
+				if (sEmployeeId) {
+					// Update localStorage as well
+					try {
+						localStorage.setItem("ehsm_employee_id", sEmployeeId);
+						console.log("Dashboard: Updated localStorage with employee ID:", sEmployeeId);
+					} catch (e) {
+						console.warn("Could not update localStorage:", e);
+					}
+					
+					// Update dashboard model
+					this.refreshEmployeeId();
+				}
+			}
+		},
+
+		// Polling mechanism as a fallback
+		_startEmployeeIdPolling: function() {
+			var that = this;
+			this._iPollingInterval = setInterval(function() {
+				that._checkEmployeeIdUpdate();
+			}, 500); // Check every 500ms
+		},
+
+		_stopEmployeeIdPolling: function() {
+			if (this._iPollingInterval) {
+				clearInterval(this._iPollingInterval);
+				this._iPollingInterval = null;
+			}
+		},
+
+		_checkEmployeeIdUpdate: function() {
+			var sCurrentEmployeeId = "";
+			try {
+				sCurrentEmployeeId = localStorage.getItem("ehsm_employee_id") || "";
+			} catch (e) {
+				return;
+			}
+			
+			var oDashboardModel = this.getView().getModel("dashboard");
+			if (oDashboardModel) {
+				var sModelEmployeeId = oDashboardModel.getProperty("/employeeId") || "";
+				if (sCurrentEmployeeId !== sModelEmployeeId && sCurrentEmployeeId) {
+					console.log("Dashboard: Polling detected employee ID change:", sModelEmployeeId, "->", sCurrentEmployeeId);
+					this.refreshEmployeeId();
+				}
 			}
 		}
 	});

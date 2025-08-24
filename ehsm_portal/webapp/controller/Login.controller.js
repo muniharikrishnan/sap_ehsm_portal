@@ -39,11 +39,21 @@ sap.ui.define([
 						// Store employee ID in localStorage for dashboard access
 						try {
 							localStorage.setItem("ehsm_employee_id", oEntry.employee_id);
+							console.log("Login: Stored employee ID in localStorage:", oEntry.employee_id);
 						} catch (e) {
 							console.warn("Could not store employee ID in localStorage:", e);
 						}
 						
-						that.getOwnerComponent().getRouter().navTo("dashboard");
+						// Fire event to notify that login was successful
+						var oEventBus = that.getOwnerComponent().getEventBus();
+						if (oEventBus) {
+							oEventBus.fireEvent("loginSuccess", { employeeId: oEntry.employee_id });
+						}
+						
+						// Small delay to ensure localStorage is properly set before navigation
+						setTimeout(function() {
+							that.getOwnerComponent().getRouter().navTo("dashboard");
+						}, 100);
 					} else {
 						MessageBox.error("Invalid credentials");
 					}
