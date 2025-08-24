@@ -36,6 +36,18 @@ sap.ui.define([
 
 			MessageToast.show("Logged out");
 			this.getOwnerComponent().getRouter().navTo("login");
+		},
+
+		onNewIncident: function () {
+			MessageToast.show("New Incident functionality will be updated soon!");
+		},
+
+		onRiskReport: function () {
+			MessageToast.show("Risk Report functionality will be updated soon!");
+		},
+
+		onSafetyAudit: function () {
+			MessageToast.show("Safety Audit functionality will be updated soon!");
 		}
 	});
 });

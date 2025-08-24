@@ -91,15 +91,15 @@
                     <HBox class="sapEHSMQuickActionsGrid">
                         <Button text="New Incident" 
                                 icon="sap-icon://add" 
-                                class="sapEHSMQuickActionBtn"
+                                class="quickActionBtn"
                                 press="onNewIncident"/>
                         <Button text="Risk Report" 
                                 icon="sap-icon://document" 
-                                class="sapEHSMQuickActionBtn"
+                                class="quickActionBtn"
                                 press="onRiskReport"/>
                         <Button text="Safety Audit" 
                                 icon="sap-icon://checklist" 
-                                class="sapEHSMQuickActionBtn"
+                                class="quickActionBtn"
                                 press="onSafetyAudit"/>
                     </HBox>
                 </VBox>

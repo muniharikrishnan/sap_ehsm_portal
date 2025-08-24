@@ -346,20 +346,23 @@
     border-bottom: 3px solid var(--sap-ehsm-primary) !important;
     position: relative !important;
     z-index: 10 !important;
+    width: 100% !important;
 }
 
 .sapEHSMDashboardTitleBar {
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
-    max-width: 1400px !important;
-    margin: 0 auto !important;
+    width: 100% !important;
+    margin: 0 !important;
+    position: relative !important;
 }
 
 .sapEHSMDashboardTitleSection {
     display: flex !important;
     align-items: center !important;
     gap: 1rem !important;
+    flex-shrink: 0 !important;
 }
 
 .sapEHSMDashboardLogo {
@@ -383,7 +386,7 @@
     opacity: 0.8 !important;
 }
 
-/* Logout Button */
+/* Logout Button - Position to absolute right */
 .sapEHSMLogoutButton {
     background: var(--sap-ehsm-gradient) !important;
     border: none !important;
@@ -397,6 +400,12 @@
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+    position: absolute !important;
+    right: 2rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    min-width: 120px !important;
+    height: auto !important;
 }
 
 .sapEHSMLogoutButton:hover {
@@ -663,7 +672,7 @@
     flex-wrap: wrap !important;
 }
 
-.sapEHSMQuickActionBtn {
+.quickActionBtn {
     background: var(--sap-ehsm-secondary) !important;
     border: 2px solid var(--sap-ehsm-primary) !important;
     border-radius: 12px !important;
@@ -673,19 +682,37 @@
     transition: all 0.3s ease !important;
     box-shadow: 0 4px 12px var(--sap-ehsm-shadow) !important;
     min-width: 150px !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
-.sapEHSMQuickActionBtn:hover {
+.quickActionBtn:hover {
     background: var(--sap-ehsm-primary) !important;
     color: var(--sap-ehsm-secondary) !important;
     transform: translateY(-3px) !important;
     box-shadow: 0 8px 20px var(--sap-ehsm-shadow-hover) !important;
 }
 
-.sapEHSMQuickActionBtn .sapMBtnInner {
+.quickActionBtn .sapMBtnInner {
     background: transparent !important;
     border: none !important;
     color: inherit !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+}
+
+.quickActionBtn .sapMBtnText {
+    color: inherit !important;
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
 }
 
 /* Dashboard Footer */
