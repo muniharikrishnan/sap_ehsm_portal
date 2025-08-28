@@ -681,6 +681,29 @@
     line-height: 1 !important;
 }
 
+/* Incident Management card: replace missing icon with Font Awesome */
+.sapEHSMIncidentCard .sapEHSMCardIcon {
+    display: none !important; /* hide broken/missing icon */
+}
+
+.sapEHSMIncidentCard .sapEHSMCardHeader {
+    position: relative !important;
+    padding-left: 2.75rem !important;
+}
+
+.sapEHSMIncidentCard .sapEHSMCardHeader::before {
+    content: "\f06a"; /* fa-circle-exclamation */
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+    color: var(--sap-ehsm-primary) !important;
+    font-size: 2rem !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    line-height: 1 !important;
+}
+
 /* Card Content */
 .sapEHSMCardContent {
     margin-bottom: 1.5rem !important;
