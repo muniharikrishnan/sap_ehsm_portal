@@ -2,6 +2,8 @@
 
 /* Import Google Fonts for professional typography */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+/* Import Font Awesome for additional icons (used without XML changes) */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
 
 /* CSS Variables for consistent theming */
 :root {
@@ -654,6 +656,29 @@
     font-size: 1.5rem !important;
     font-weight: 600 !important;
     color: var(--sap-ehsm-text-primary) !important;
+}
+
+/* Risk Assessment card: inject Font Awesome icon via CSS only */
+.sapEHSMRiskCard .sapEHSMCardIcon {
+    display: none !important; /* hide XML icon without touching the view */
+}
+
+.sapEHSMRiskCard .sapEHSMCardHeader {
+    position: relative !important;
+    padding-left: 2.75rem !important; /* make room for FA icon */
+}
+
+.sapEHSMRiskCard .sapEHSMCardHeader::before {
+    content: "\f071"; /* fa-triangle-exclamation */
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important; /* solid */
+    color: var(--sap-ehsm-primary) !important;
+    font-size: 2rem !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    line-height: 1 !important;
 }
 
 /* Card Content */
